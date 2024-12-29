@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather_app</title>
+    <title>Quick Weather</title>
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/load.css') }}">
 </head>
 <body>
 
+{{-- ロード画面 --}}
+<div id="page_loading" style="display:none;">
+<div id="load_area">
+<div class="loader">Loading...</div>
+<div id="page_loading_text"></div>
+</div>
+</div>
+
+
 <header>
-    <h1>Weather App</h1>
+    <h1>Quick Weather</h1><img src="{{ asset('image/header_image.png') }}" alt="ヘッダー画像">
 </header>
 
 <div class="container">
@@ -48,6 +59,16 @@
 </div>
 
 <script src="{{ asset('js/home.js') }}"></script>
+
+<!--==============ロード画面のJQuery読み込み===============-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+<!--IE11用※対応しなければ削除してください-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
+<!--自作のJS-->
+<script src="js/load.js"></script>
+<!--==============END ロード画面のJQuery読み込み===============-->
 
 </body>
 </html>

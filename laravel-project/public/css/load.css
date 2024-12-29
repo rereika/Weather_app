@@ -1,0 +1,192 @@
+@charset "utf-8";
+
+/*========= LoadingのためのCSS ===============*/
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Loading背景画面設定　*/
+
+#page_loading {
+  /*fixedで全面に固定*/
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  color: #fff;
+  font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif !important;
+}
+
+/* Loadingバー中央配置　*/
+#load_area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: #2e2e2e;
+}
+
+#page_loading_text {
+  width: 40%;
+  color: #fff;
+  margin: auto;
+}
+
+.load_spbr {
+  display: none;
+}
+
+.load_h {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  padding: 10px 0 16px;
+}
+
+p.load_p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 800px) {
+  .load_spbr {
+    display: block;
+  }
+}
+
+/*IE11対策用バーの線の高さ※対応しなければ削除してください*/
+#page_loading_text svg {
+  height: 12px;
+  border-radius: 10px;
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+
+#container {
+  width: 100%;
+  height: 100vh;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.progressbar-text {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  padding: 0 !important;
+  margin: auto !important;
+  transform: none !important;
+  font-size: 1rem !important;
+  color: #2e2e2e !important;
+  margin-top: 10px !important;
+}
+
+
+a {
+  color: #333;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+
+.loader {
+  margin: auto;
+  margin-bottom: 60px;
+  font-size: 15px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  /*position: relative;*/
+  text-indent: -9999em;
+  -webkit-animation: load5 1.1s infinite ease;
+  animation: load5 1.1s infinite ease;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+@-webkit-keyframes load5 {
+
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #2e2e2e, 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.5), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.7);
+  }
+
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.7), 1.8em -1.8em 0 0em #2e2e2e, 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.5);
+  }
+
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.5), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.7), 2.5em 0em 0 0em #2e2e2e, 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.5), 2.5em 0em 0 0em rgba(50, 50, 50, 0.7), 1.75em 1.75em 0 0em #2e2e2e, 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.5), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.7), 0em 2.5em 0 0em #2e2e2e, -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.5), 0em 2.5em 0 0em rgba(50, 50, 50, 0.7), -1.8em 1.8em 0 0em #2e2e2e, -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.5), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.7), -2.6em 0em 0 0em #2e2e2e, -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.5), -2.6em 0em 0 0em rgba(50, 50, 50, 0.7), -1.8em -1.8em 0 0em #2e2e2e;
+  }
+}
+
+@keyframes load5 {
+
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #2e2e2e, 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.5), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.7);
+  }
+
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.7), 1.8em -1.8em 0 0em #2e2e2e, 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.5);
+  }
+
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.5), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.7), 2.5em 0em 0 0em #2e2e2e, 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.5), 2.5em 0em 0 0em rgba(50, 50, 50, 0.7), 1.75em 1.75em 0 0em #2e2e2e, 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.5), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.7), 0em 2.5em 0 0em #2e2e2e, -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.2), -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.5), 0em 2.5em 0 0em rgba(50, 50, 50, 0.7), -1.8em 1.8em 0 0em #2e2e2e, -2.6em 0em 0 0em rgba(50, 50, 50, 0.2), -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.5), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.7), -2.6em 0em 0 0em #2e2e2e, -1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2);
+  }
+
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(50, 50, 50, 0.2), 1.8em -1.8em 0 0em rgba(50, 50, 50, 0.2), 2.5em 0em 0 0em rgba(50, 50, 50, 0.2), 1.75em 1.75em 0 0em rgba(50, 50, 50, 0.2), 0em 2.5em 0 0em rgba(50, 50, 50, 0.2), -1.8em 1.8em 0 0em rgba(50, 50, 50, 0.5), -2.6em 0em 0 0em rgba(50, 50, 50, 0.7), -1.8em -1.8em 0 0em #2e2e2e;
+  }
+}
+
+/*========= END LoadingのためのCSS ===============*/

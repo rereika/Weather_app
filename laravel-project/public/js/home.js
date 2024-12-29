@@ -16,6 +16,10 @@ function updateWeatherDisplay(data) {
 
 // 現在地ボタンをクリックしたとき
 document.getElementById("current-location-btn").onclick = function () {
+
+  // ロード画面を表示
+  document.getElementById('page_loading').style.display = 'block';
+
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 };
 
@@ -31,7 +35,11 @@ function successCallback(position) {
   fetch(`/weather/current-location?latitude=${latitude}&longitude=${longitude}`)
     .then(response => response.json())
     .then(updateWeatherDisplay)
-    .catch(error => alert("天気情報の取得に失敗しました"));
+    .catch(error => alert("天気情報の取得に失敗しました"))
+    .finally(() => {
+      // ロード画面を非表示
+      document.getElementById('page_loading').style.display = 'none';
+    });
 }
 
 // 位置情報取得失敗時
