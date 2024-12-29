@@ -14,14 +14,34 @@ class WeatherController extends Controller
         $this->openWeather = $openWeather;
     }
 
-    public function nameCheckWether(Request $request){
+    // public function nameCheckWether(Request $request){
 
+    //     $city = $request->query('city');
+
+    //     $weatherData = $this->openWeather->getWeatherByCity($city);
+
+    //     return view('Weather_app.home', compact('weatherData'));
+    // }
+
+    public function currentLocationWeather(Request $request)
+    {
+        $latitude = $request->query('latitude');
+        $longitude = $request->query('longitude');
+
+        $weatherData = $this->openWeather->getWeatherByCoordinates($latitude, $longitude);
+
+        return response()->json($weatherData);
+    }
+
+    public function searchCityWeather(Request $request)
+    {
         $city = $request->query('city');
-
         $weatherData = $this->openWeather->getWeatherByCity($city);
 
-        return view('Weather_app.home', compact('weatherData'));
+        return response()->json($weatherData);
     }
+
+
 
 
 }
