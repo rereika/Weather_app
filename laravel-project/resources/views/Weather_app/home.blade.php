@@ -14,7 +14,8 @@
 
 <div class="container">
 
-    <div class="main">
+    <div class="weather-search">
+
         <p>どこの天気を調べますか？</p>
 
         <div class="btn">
@@ -26,23 +27,36 @@
             <form action="{{ route('name.check.weather') }}" method="GET">
                 <div class="location-input-container">
                     <input type="text" name="city" class="location-input" placeholder="地名を入力" required>
-                    <img src="{{ asset('image/search-icon.png') }}" alt="検索アイコン" class="search-icon">
+                    <button type="submit" class="search-button">
+                        <img src="{{ asset('image/search-icon.png') }}" alt="検索アイコン" class="search-icon">
+                    </button>
                 </div>
             </form>
-
-            <!-- <div class="txt-margin">
-                <p>緯度：<span id="latitude">???</span><span>度</span></p>
-                <p>経度：<span id="longitude">???</span><span>度</span></p>
-            </div> -->
-
-            @if($weatherData)
-            <p>気温：{{ $weatherData['main']['temp'] }}°C</p>
-            @else
-                <p>天気情報が取得できませんでした。</p>
-            @endif
-
         </div>
 
+    </div>
+
+    <div class="weather-display">
+
+        <div class="txt-margin">
+            <p>緯度：<span id="latitude">???</span><span>度</span></p>
+            <p>経度：<span id="longitude">???</span><span>度</span></p>
+        </div>
+
+        @if(isset($weatherData['error']))
+            <p>エラー: {{ $weatherData['error'] }}</p>
+        @elseif(isset($weatherData['main']))
+            <h2>天気情報:</h2>
+            <p>都市名: {{ $weatherData['name'] }}</p>
+            <p>天気: {{ $weatherData['weather'][0]['description'] }}</p>
+            <p>気温: {{ $weatherData['main']['temp'] }}°C</p>
+        @endif
+
+        <div class="back_btn">
+
+        <a href="{{ route('back.home')}}" class="back_home_btn">戻る</a>
+
+        </div>
     </div>
 
 </div>
