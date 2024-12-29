@@ -9,13 +9,20 @@ header {
   background-color: #FFCCBC;
   color: #ffffff;
   text-align: center;
+  justify-content: center;
   line-height: 100px;
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 header h1 {
   margin: 0;
+}
+
+header img {
+  width: 6.5%;
+  height: auto;
 }
 
 .container {
@@ -121,4 +128,8 @@ header h1 {
   transform: translateY(-50%);
   width: 20px;
   cursor: pointer;
+}
+
+#load_area {
+  display: inline-block;
 }
