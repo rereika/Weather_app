@@ -43,20 +43,6 @@
             <p>経度：<span id="longitude">???</span><span>度</span></p>
         </div>
 
-        @if(isset($weatherData['error']))
-            <p>エラー: {{ $weatherData['error'] }}</p>
-        @elseif(isset($weatherData['main']))
-            <h2>天気情報:</h2>
-            <p>都市名: {{ $weatherData['name'] }}</p>
-            <p>天気: {{ $weatherData['weather'][0]['description'] }}</p>
-            <p>気温: {{ $weatherData['main']['temp'] }}°C</p>
-        @endif
-
-        <div class="back_btn">
-
-        <a href="{{ route('back.home')}}" class="back_home_btn">戻る</a>
-
-        </div>
     </div>
 
 </div>
