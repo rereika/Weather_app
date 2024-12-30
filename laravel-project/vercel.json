@@ -10,7 +10,7 @@
     ],
     "routes": [
         {
-            "src": "/(css|js|vendor|assets|build)/(.*)",
+            "src": "/(css|js|vendor|assets|build|image)/(.*)",
             "dest": "public/$1/$2"
         },
         {
