@@ -1,5 +1,5 @@
 // 天気情報を表示する
-function updateWeatherDisplay(data) {
+const updateWeatherDisplay = (data) => {
   const weatherDisplay = document.querySelector('.weather-display');
   if (data.error) {
     alert(data.error);
@@ -45,38 +45,31 @@ function updateWeatherDisplay(data) {
           </div>
         </div>
 
-
-    </div>
-
-
       </div>
     `;
     weatherDisplay.classList.add('active');
   }
-}
-
+};
 
 // UNIXタイムスタンプを時刻形式に変換する関数
-function formatTime(timestamp) {
+const formatTime = (timestamp) => {
   const date = new Date(timestamp * 1000); // UNIXタイムスタンプをミリ秒に変換
   const hours = date.getHours().toString().padStart(2, '0');
   const minutes = date.getMinutes().toString().padStart(2, '0');
   return `${hours}:${minutes}`;
-}
+};
 
 // 現在の日付をフォーマットする関数
-function getCurrentDate() {
+const getCurrentDate = () => {
   const today = new Date();
   const year = today.getFullYear();
   const month = (today.getMonth() + 1).toString().padStart(2, '0'); // 月は0から始まるため+1
   const day = today.getDate().toString().padStart(2, '0');
   return `${year}-${month}-${day}`; // YYYY-MM-DD 形式で返す
-}
-
+};
 
 // 現在地ボタンをクリックしたとき
-document.getElementById("current-location-btn").onclick = function () {
-
+document.getElementById("current-location-btn").onclick = () => {
   // ロード画面を表示
   document.getElementById('page_loading').style.display = 'block';
 
@@ -84,7 +77,7 @@ document.getElementById("current-location-btn").onclick = function () {
 };
 
 // 位置情報取得成功時
-function successCallback(position) {
+const successCallback = (position) => {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
 
@@ -94,18 +87,18 @@ function successCallback(position) {
   // 現在地の天気情報を取得
   fetch(`/weather/current-location?latitude=${latitude}&longitude=${longitude}`)
     .then(response => response.json())
-    .then(updateWeatherDisplay)
-    .catch(error => alert("天気情報の取得に失敗しました"))
     .finally(() => {
       // ロード画面を非表示
       document.getElementById('page_loading').style.display = 'none';
-    });
-}
+    })
+    .then(updateWeatherDisplay)
+    .catch(error => alert("天気情報の取得に失敗しました"));
+};
 
 // 位置情報取得失敗時
-function errorCallback(error) {
+const errorCallback = (error) => {
   alert("位置情報が取得できませんでした");
-}
+};
 
 // 都市名検索フォーム送信時
 document.querySelector('.weather-search form').addEventListener('submit', (event) => {
