@@ -45,6 +45,96 @@ header img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.weather-info img {
+  width: 100px;
+}
+
+.weather-display {
+  margin-top: 40px;
+}
+
+.weather-display .main {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 80px
+}
+
+.weather-display .date {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 10px
+}
+
+.weather-display .temp {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 15px
+}
+
+.weather-display .main_temp {
+  font-size: 35px;
+  font-weight: bold;
+  color: #696969;
+}
+
+.weather-display .min_max {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weather-display .temp_min {
+  color: #30b9f0;
+}
+
+.weather-display .temp_max {
+  color: #f0486c;
+}
+
+.weather-display span {
+  font-size: 18px;
+}
+
+.weather-display .additional-info {
+  display: flex;
+  gap: 20px;
+}
+
+.weather-display .additional-info .one {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-display .additional-info .pair {
+  display: flex;
+  align-items: center;
+  /* 縦方向の中央に揃える */
+  gap: 10px;
+  /* title と value の間にスペースを追加 */
+}
+
+.weather-display .additional-info .title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #696969;
+  text-align: left;
+}
+
+.weather-display .additional-info .value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #696969;
+  text-align: left;
+}
+
+.weather-display .additional-info .title img {
+  width: 30px;
+  margin-left: 10px;
+}
+
 .weather-search p {
   font-size: 20px;
   margin-bottom: 20px;
@@ -59,12 +149,10 @@ header img {
 
 .weather-search {
   display: block;
-  /* 初期状態で表示 */
 }
 
 .weather-search.hidden {
   display: none;
-  /* 非表示時 */
 }
 
 .weather-display {
@@ -74,6 +162,7 @@ header img {
 .weather-display.active {
   display: block;
 }
+
 
 
 .current-location-btn {

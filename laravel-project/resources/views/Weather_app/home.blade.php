@@ -12,12 +12,11 @@
 
 {{-- ロード画面 --}}
 <div id="page_loading" style="display:none;">
-<div id="load_area">
-<div class="loader">Loading...</div>
-<div id="page_loading_text"></div>
+    <div id="load_area">
+    <div class="loader">Loading...</div>
+    <div id="page_loading_text"></div>
 </div>
 </div>
-
 
 <header>
     <h1>Quick Weather</h1><img src="{{ asset('image/header_image.png') }}" alt="ヘッダー画像">
@@ -32,7 +31,7 @@
         <div class="btn">
             <button class="current-location-btn" id="current-location-btn">
                 <img src="{{ asset('image/current-location.png') }}" alt="現在地画像">
-            現在地
+                現在地
             </button>
 
             <form action="{{ route('name.check.weather') }}" method="GET">
@@ -57,6 +56,13 @@
     </div>
 
 </div>
+
+<!-- 画像パスをJavaScript変数に渡す -->
+<script>
+    const humidityImage = "{{ asset('image/humidity.png') }}";
+    const sunriseImage = "{{ asset('image/sunrise.png') }}";
+    const sunsetImage = "{{ asset('image/sunset.png') }}";
+</script>
 
 <script src="{{ asset('js/home.js') }}"></script>
 
