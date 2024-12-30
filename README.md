@@ -46,7 +46,11 @@ P2：可能であれば実装したい<br>
 | location_id            | 地域ID            | BIGINT   |      |   ◯   | ◯  |       |        |     |
 | current_weather | 現在の天気  | VARCHAR(50)   |      |      | ◯       |       |         |
 | temperature | 気温  | DECIMAL(5, 2)   |      |      | ◯       |       |         |
-| rain_start_time | 雨の開始時間  | DATETIME   |      |      |        |       |         |
+| max_temperature | 最高気温  | DECIMAL(5, 2)   |      |      | ◯       |       |         |
+| min_temperature | 最低気温  | DECIMAL(5, 2)   |      |      | ◯       |       |         |
+| humidity | 湿度  | DECIMAL(5, 2)   |      |      | ◯       |       |         |
+| sunrise_time | 日の出時間  | TIMESTAMP   |      |      | ◯       |       |         |
+| sunset_time	 | 日の入り時間  | TIMESTAMP   |      |      | ◯       |       |         |
 | fetched_at | 天気情報を取得した日時  | TIMESTAMP   |      |      | ◯       |       |  DEFAULT       |
 | created_at | 作成日時  | TIMESTAMP   |      |      | ◯       |       |  DEFAULT       |
 | updated_at | 更新日時  | TIMESTAMP   |      |      | ◯       |       |  DEFAULT       |
