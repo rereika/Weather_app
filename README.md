@@ -1,14 +1,22 @@
-# 地域を選択すると、天気がわかるサービス
+# Quick Weather
+URL:https://weather-app-inky-chi-23.vercel.app/
 
+![Mockup](documents/image/Mockup.png)
 
-## 誰のどんな課題を解決するのか？
-雨がいつ降るかをすぐに知りたい、自転車通勤者や洗濯好きに愛用される天気アプリ。
+## 目次
+1. [概要](#概要)
+2. [機能要件](#機能要件)
+3. [使用技術](#使用技術)
+4. [テーブル定義書](#テーブル定義書)
+
+## 概要
+* 地域を選択すると、天気が分かるサービス
+* 「今」の天気が「すぐに」知ることができる天気アプリ。
 
 ## 機能要件
 P0：必須<br>
 P1：ここまで実装することを想定<br>
 P2：可能であれば実装したい<br>
-
 
  **LP(トップページ)**
 - 現在地の取得：Geolocation API を使用して緯度・経度を取得し、OpenWeatherMap API に送信(P0)
@@ -20,12 +28,26 @@ P2：可能であれば実装したい<br>
 - 1時間ごとの天気(P0)
 - いつから雨が降るか？一言コメント(P0)
 
-## 使用する技術
-- Geolocation API(現在地取得API)
-- OpenWeatherMap API(天気取得API)
-- Google Places API(知名候補を表示)
 
-## テーブル定義書
+## 使用技術
+### フロントエンド
+* HTML/CSS
+* JavaScript (ES2023)
+### バックエンド
+* PHP 8.3.10
+* Laravel Framework 11.11.0
+### データベース
+* mysql 8.0.39
+### デプロイ先
+* Vercel (+ Vercel Postgres)
+### バージョン管理
+* Git/GitHub
+### その他
+* Geolocation API(現在地取得API)
+* OpenWeatherMap API(天気取得API)
+* Google Places API(知名候補を表示)
+
+##
 取得した天気データはデータベースに保存し、同じ地域の情報が1時間以内に取得されている場合は、そのデータを再利用します（API呼び出しの効率化）。
 
 
